@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .voice-active {
+    animation: pulse 2s infinite;
+    @apply ring-2 ring-voice-primary;
+  }
+  
+  .voice-listening {
+    @apply bg-voice-primary text-white;
+    animation: voice-wave 1s ease-in-out infinite;
+  }
+  
+  .blackbox-glow {
+    @apply shadow-lg shadow-blackbox-accent/50;
+  }
+  
+  .worker-deploying {
+    @apply animate-pulse bg-gradient-to-r from-voice-primary to-blackbox-accent;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-voice-primary to-blackbox-accent bg-clip-text text-transparent;
+  }
+}
